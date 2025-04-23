@@ -1,7 +1,6 @@
 #ifndef ACCOUNT_H
 #define ACCOUNT_H
-
-typedef struct{
+typedef struct {
     char full_name[100];
     char id_number[20];
     char kra_pin[20];
@@ -14,12 +13,9 @@ typedef struct{
     char account_status[20];
     char pin[10];
 } Account;
-
-//Basic account functions
-int createAccount();
+int createAccount(Account *acc);
+void generateAccountNumber(char *account_number);
 int loadAccount(const char *account_number, Account *acc);
 int updateAccount(const Account *acc);
 int deleteAccount(const char *account_number);
-void generateAccountNumber(char *account_number);
-
 #endif
